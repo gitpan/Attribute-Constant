@@ -2,7 +2,7 @@ package Attribute::Constant;
 use 5.008001;
 use warnings;
 use strict;
-our $VERSION = sprintf "%d.%02d", q$Revision: 0.2 $ =~ /(\d+)/g;
+our $VERSION = sprintf "%d.%02d", q$Revision: 0.3 $ =~ /(\d+)/g;
 use Attribute::Handlers;
 use Data::Lock ();
 
@@ -27,7 +27,7 @@ Attribute::Constant - Make read-only variables via attribute
 
 =head1 VERSION
 
-$Id: Constant.pm,v 0.2 2008/06/27 19:50:52 dankogai Exp dankogai $
+$Id: Constant.pm,v 0.3 2013/02/24 07:03:27 dankogai Exp dankogai $
 
 =head1 SYNOPSIS
 
@@ -52,17 +52,22 @@ L<Data::Lock>, it imposes almost no performance penalty.
 
 Multi-line attributes are not allowed in Perl 5.8.x.
 
-  my $o : Constant(Foo->new(1,2,3)) # ok;
+  my $o : Constant(Foo->new(one=>1,two=>2,three=>3));    # ok
   my $p : Constant(Bar->new(
-			    1,2,3
-			   )
-		  )                 # needs Perl 5.10
+                            one   =>1,
+                            two   =>2,
+                            three =>3
+                           )
+                 ); # needs Perl 5.10
 
 In which case you can use L<Data::Lock> instead:
 
   dlock(my $p = Bar->new(
-			 1, 2, 3
-			));
+        one   => 1,
+        two   => 2,
+        three => 3
+    )
+  );
 
 After all, this module is a wrapper to L<Data::Lock>;
 
@@ -105,7 +110,7 @@ L<Data::Lock>, L<constant>
 
 =head1 AUTHOR
 
-Dan Kogai, C<< <dankogai at dan.co.jp> >>
+Dan Kogai, C<< <dankogai+cpan at gmail.com> >>
 
 =head1 BUGS
 

@@ -1,5 +1,5 @@
 #
-# $Id: Makefile.PL,v 0.1 2008/06/27 19:11:42 dankogai Exp $
+# $Id: Makefile.PL,v 0.2 2013/02/24 07:03:27 dankogai Exp dankogai $
 #
 use 5.008001;
 use strict;
@@ -8,7 +8,7 @@ use ExtUtils::MakeMaker;
 
 WriteMakefile(
     NAME                => 'Attribute::Constant',
-    AUTHOR              => 'Dan Kogai <dankogai@dan.co.jp>',
+    AUTHOR              => 'Dan Kogai <dankogai+cpan@gmail.com>',
     VERSION_FROM        => 'lib/Attribute/Constant.pm',
     ABSTRACT_FROM       => 'lib/Attribute/Constant.pm',
     PL_FILES            => {},
