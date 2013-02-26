@@ -1,6 +1,6 @@
 #!perl -T
 #
-# $Id: 03-obj.t,v 0.3 2013/02/24 07:03:27 dankogai Exp dankogai $
+# $Id: 03-obj.t,v 0.4 2013/02/26 03:19:02 dankogai Exp dankogai $
 #
 use strict;
 use warnings;
@@ -30,7 +30,7 @@ use Test::More tests => 14;
     is $o->get, 2, '$o->get == 2';
 }
 SKIP: {
-    skip 'Perl 5.9.5 or better required', 5 unless $] >= 5.009005;
+    skip 'Perl 5.9.5 or better required', 7 unless $] >= 5.009005;
     my $o : Constant( 
 		     Foo->new(foo=>1) 
 		    );
